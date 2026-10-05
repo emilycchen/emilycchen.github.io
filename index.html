@@ -131,6 +131,22 @@
         transform: translateY(0);
       }
     }
+
+    /* Typing cursor pulse animation */
+    @keyframes cursorPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.72em;
+      background-color: #587563;
+      margin-left: 5px;
+      vertical-align: middle;
+      border-radius: 2px;
+      animation: cursorPulse 0.85s infinite ease-in-out;
+    }
   </style>
 </head>
 <body class="selection:bg-[#A4B8AC]/30 selection:text-black antialiased min-h-screen">
@@ -248,9 +264,9 @@
         <!-- HERO HEADER: "SOFTWARE ENGINEER" in massive all-caps display font -->
         <section class="space-y-2 pt-1">
           
-          <!-- Highly Readable Cursive Greeting Kicker in Sacramento -->
-          <p class="font-calligraphy text-5xl sm:text-6xl lg:text-7xl text-[#587563] tracking-normal mb-1 select-none leading-none">
-            hello, I'm Emily &mdash;
+          <!-- Highly Readable Cursive Greeting Kicker in Sacramento with Typing Effect -->
+          <p class="font-calligraphy text-5xl sm:text-6xl lg:text-7xl text-[#587563] tracking-normal mb-1 select-none leading-none flex items-center min-h-[1.15em]">
+            <span id="typing-greeting"></span><span id="typing-cursor" class="typing-cursor"></span>
           </p>
 
           <!-- Massive Title -->
@@ -937,6 +953,39 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closePhotoModal();
     });
+
+    // 5. Typing Animation for "hello, I'm Emily" (Slower, elegant cadence)
+    (function initTyping() {
+      const target = document.getElementById('typing-greeting');
+      const cursor = document.getElementById('typing-cursor');
+      if (!target) return;
+
+      const fullText = "hello, I'm Emily";
+      let charIdx = 0;
+
+      // Start typing smoothly as the page fades in
+      setTimeout(() => {
+        function typeNext() {
+          if (charIdx < fullText.length) {
+            target.textContent += fullText.charAt(charIdx);
+            charIdx++;
+            // Graceful, deliberate typing speed (~110ms) with a natural pause on the comma
+            const isComma = fullText.charAt(charIdx - 1) === ',';
+            const delay = isComma ? 380 : 110;
+            setTimeout(typeNext, delay);
+          } else {
+            // After finishing, let cursor blink for 2.5s then softly fade out
+            setTimeout(() => {
+              if (cursor) {
+                cursor.style.transition = 'opacity 0.6s ease';
+                cursor.style.opacity = '0';
+              }
+            }, 2500);
+          }
+        }
+        typeNext();
+      }, 450);
+    })();
   </script>
 
   <!-- Photo Lightbox Modal -->
