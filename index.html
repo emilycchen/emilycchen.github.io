@@ -813,25 +813,40 @@
     window.addEventListener('scroll', updateScrollSpy, { passive: true });
     updateScrollSpy();
 
-    function handleFormSubmit(e) {
+    async function handleFormSubmit(e) {
       e.preventDefault();
       const feedback = document.getElementById('form-feedback');
       const submitBtn = document.getElementById('submit-btn');
+      const form = document.getElementById('contact-form');
 
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = "<span>SENDING...</span>";
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "<span>SENDING...</span>";
+      feedback.classList.add('hidden');
+
+      try {
+        const res = await fetch('https://formspree.io/f/xppppyrv', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+          })
+        });
+
+        if (!res.ok) throw new Error('Request failed');
+
+        feedback.textContent = '✓ Thank you! Message sent.';
+        feedback.classList.remove('hidden');
+        submitBtn.innerHTML = "<span>SENT &check;</span>";
+        submitBtn.classList.add('opacity-80');
+        form.reset();
+      } catch (err) {
+        feedback.textContent = 'Something went wrong. Please email me directly.';
+        feedback.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "<span>SEND MESSAGE</span>";
       }
-
-      setTimeout(() => {
-        if (feedback) feedback.classList.remove('hidden');
-        if (submitBtn) {
-          submitBtn.innerHTML = "<span>SENT &check;</span>";
-          submitBtn.classList.add('opacity-80');
-        }
-        const form = document.getElementById('contact-form');
-        if (form) form.reset();
-      }, 500);
     }
 
     function openPhotoModal(imgSrc, title, artist, desc) {
