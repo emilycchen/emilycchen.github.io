@@ -11,36 +11,40 @@
   <style>
 
     :root {
-      --bg: #f2f4f3;
+      /* Base Canvas & Cards */
+      --bg: #f4f6f8;
       --card-bg: #ffffff;
-      --card-border: rgba(142, 146, 155, 0.22);
-      --text-main: #000000;
-      --text-muted: #4f525a;
+      --card-border: rgba(100, 116, 139, 0.20);
+      --text-main: #0a0f14;
+      --text-muted: #526071;
       
-      --c-sage: #A4B8AC;
-      --c-sage-dark: #587563;
-      --c-sage-tint: rgba(164, 184, 172, 0.20);
-      --c-slate: #8E929B;
-      --c-slate-tint: rgba(142, 146, 155, 0.15);
+      /* Accents: Deep Crisp Juniper / Mint */
+      --c-sage: #80c4b2;
+      --c-sage-dark: #1f7a63;
+      --c-sage-tint: rgba(31, 122, 99, 0.12);
+      --c-slate: #7c8ba1;
+      --c-slate-tint: rgba(124, 139, 161, 0.14);
 
-      --accent: #587563;
-      --accent-hover: #455d4e;
-      --accent-tint: rgba(164, 184, 172, 0.20);
+      --accent: #1f7a63;
+      --accent-hover: #165a49;
+      --accent-tint: rgba(31, 122, 99, 0.12);
 
       --input-bg: #ffffff;
-      --badge-bg: #f7f8f7;
-      --card-shadow: 0 4px 24px -2px rgba(142, 146, 155, 0.12);
+      --badge-bg: #eef4f2;
+      --card-shadow: 0 4px 24px -2px rgba(15, 23, 42, 0.08);
 
-      --c-kompass: #A85A48;
-      --c-crymaps: #3A6D7A;
-      --c-hallhopper: #4F5E82;
-      --c-ml: #3F6852;
-      --c-expense: #4A6E5D;
+      /* Projects */
+      --c-kompass: #bd5338;
+      --c-crymaps: #257085;
+      --c-hallhopper: #435b88;
+      --c-ml: #1f7a63;
+      --c-expense: #2d7d70;
 
-      --c-boulder: #587563;
-      --c-anime: #6a8b77;
-      --c-music: #6B5B95;
-      --c-game: #4F5E82;
+      /* Interests */
+      --c-boulder: #1f7a63;
+      --c-anime: #2b826b;
+      --c-music: #705399;
+      --c-game: #3f608f;
     }
 
     /* Screen entrance fade-in (luxurious slow 4.8s entrance) */
@@ -131,7 +135,7 @@
       display: inline-block;
       width: 3px;
       height: 1.1em;
-      background-color: #587563;
+      background-color: var(--accent);
       margin-left: 5px;
       vertical-align: middle;
       border-radius: 2px;
@@ -139,7 +143,7 @@
     }
   </style>
 </head>
-<body class="selection:bg-[#A4B8AC]/30 selection:text-black antialiased min-h-screen">
+<body class="selection:bg-[#1F7A63]/25 selection:text-black antialiased min-h-screen">
 
   <div class="max-w-6xl mx-auto px-6 pt-24 pb-20 lg:pt-28 lg:pb-28">
     <div class="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-10 lg:gap-14">
@@ -148,8 +152,8 @@
       <aside class="h-full">
         <div class="lg:sticky lg:top-24 bg-white rounded-3xl border border-[var(--card-border)] shadow-[var(--card-shadow)] relative overflow-hidden min-h-[380px] sm:min-h-[400px] p-8 flex flex-col justify-between group">
           
-          <!-- Background -->
-          <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-[#E9F1EF]/70 blur-3xl pointer-events-none"></div>
+          <!-- Background Glow -->
+          <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-[#d9ece6]/70 blur-3xl pointer-events-none"></div>
 
           <!-- Top-Left Content: Name, Title, Location -->
           <div class="relative z-20 space-y-4 max-w-[170px] sm:max-w-[185px]">
@@ -159,11 +163,11 @@
               <h2 class="text-3xl sm:text-[36px] font-extrabold tracking-tight text-black uppercase leading-none whitespace-nowrap">
                 Emily Chen
               </h2>
-              <div class="text-xs font-mono-meta text-[#587563] font-bold pt-1.5 tracking-tight whitespace-nowrap">
+              <div class="text-xs font-mono-meta text-[#1F7A63] font-bold pt-1.5 tracking-tight whitespace-nowrap">
                 CS &bull; BIOLOGY &bull; UMD '27
               </div>
               <p class="text-xs font-mono-meta text-[var(--text-muted)] pt-0.5 flex items-center gap-1.5 whitespace-nowrap">
-                <svg class="w-3.5 h-3.5 text-[#587563]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <svg class="w-3.5 h-3.5 text-[#1F7A63]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 College Park, MD
               </p>
             </div>
@@ -171,37 +175,37 @@
             <!-- Links w/ arrows -->
             <div class="pt-1 space-y-1.5 font-mono-meta text-xs sm:text-sm">
               <div>
-                <a href="Emily_Chen_Resume.pdf" download="Emily_Chen_Resume.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-black hover:text-[#587563] font-bold transition-colors group/link">
-                  <span class="border-b border-black group-hover/link:border-[#587563] pb-0.5">Resume (PDF)</span>
-                  <span class="text-[#587563] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
+                <a href="Emily_Chen_Resume.pdf" download="Emily_Chen_Resume.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-black hover:text-[#1F7A63] font-bold transition-colors group/link">
+                  <span class="border-b border-black group-hover/link:border-[#1F7A63] pb-0.5">Resume (PDF)</span>
+                  <span class="text-[#1F7A63] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
                 </a>
               </div>
               <div>
                 <a href="https://github.com/emilycchen" target="_blank" class="inline-flex items-center gap-1.5 text-[var(--text-muted)] hover:text-black font-medium transition-colors group/link">
                   <span class="hover:underline">GitHub</span>
-                  <span class="text-[#587563] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
+                  <span class="text-[#1F7A63] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
                 </a>
               </div>
               <div>
                 <a href="https://linkedin.com/in/emcchens/" target="_blank" class="inline-flex items-center gap-1.5 text-[var(--text-muted)] hover:text-black font-medium transition-colors group/link">
                   <span class="hover:underline">LinkedIn</span>
-                  <span class="text-[#587563] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
+                  <span class="text-[#1F7A63] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
                 </a>
               </div>
               <div>
                 <a href="mailto:echen583@gmail.com" class="inline-flex items-center gap-1.5 text-[var(--text-muted)] hover:text-black font-medium transition-colors group/link">
                   <span class="hover:underline">Email</span>
-                  <span class="text-[#587563] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
+                  <span class="text-[#1F7A63] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&nearr;</span>
                 </a>
               </div>
               <div class="!mt-5 space-y-1.5">
-                <div class="w-28 h-px bg-[#587563]/40 mb-4"></div>
-                <span class="block text-[10px] text-[#587563] font-bold uppercase tracking-widest pb-1">Sections</span>
-                <a href="#experience" class="section-link block text-[#587563] hover:text-black font-medium transition-colors" data-target="experience"># Experience</a>
-                <a href="#about" class="section-link block text-[#587563] hover:text-black font-medium transition-colors" data-target="about"># About</a>
-                <a href="#projects" class="section-link block text-[#587563] hover:text-black font-medium transition-colors" data-target="projects"># Projects</a>
-                <a href="#toolkit" class="section-link block text-[#587563] hover:text-black font-medium transition-colors" data-target="toolkit"># Toolkit</a>
-                <a href="#connect" class="section-link block text-[#587563] hover:text-black font-medium transition-colors" data-target="connect"># Connect</a>
+                <div class="w-28 h-px bg-[#1F7A63]/40 mb-4"></div>
+                <span class="block text-[10px] text-[#1F7A63] font-bold uppercase tracking-widest pb-1">Sections</span>
+                <a href="#experience" class="section-link block text-[#1F7A63] hover:text-black font-medium transition-colors" data-target="experience"># Experience</a>
+                <a href="#about" class="section-link block text-[#1F7A63] hover:text-black font-medium transition-colors" data-target="about"># About</a>
+                <a href="#projects" class="section-link block text-[#1F7A63] hover:text-black font-medium transition-colors" data-target="projects"># Projects</a>
+                <a href="#toolkit" class="section-link block text-[#1F7A63] hover:text-black font-medium transition-colors" data-target="toolkit"># Toolkit</a>
+                <a href="#connect" class="section-link block text-[#1F7A63] hover:text-black font-medium transition-colors" data-target="connect"># Connect</a>
               </div>
             </div>
 
@@ -220,21 +224,21 @@
         <section class="space-y-2 pt-1">
           
           <!-- Greeting with typing animation -->
-          <p class="font-calligraphy text-2xl sm:text-3xl lg:text-4xl text-[#587563] tracking-normal mb-1 select-none leading-none flex items-center min-h-[1.15em]">
+          <p class="font-calligraphy text-2xl sm:text-3xl lg:text-4xl text-[#1F7A63] tracking-normal mb-1 select-none leading-none flex items-center min-h-[1.15em]">
             <span id="typing-greeting"></span><span id="typing-cursor" class="typing-cursor"></span>
           </p>
 
           <!-- Title -->
           <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-black uppercase leading-[0.92]">
             Software<br>
-            <span class="text-[#587563]">
+            <span class="text-[#1F7A63]">
               Engineer.
             </span>
           </h1>
 
           <!-- Short Blurb -->
           <p class="text-base text-black leading-relaxed max-w-2xl font-normal pt-3">
-            I build reliable data pipelines, distributed systems, and clean frontend tools &mdash; turning complex technical problems into intuitive, responsive software.
+            I study computer science and biology at UMD. Most of my work sits around data infrastructure, computational structural biology, and building tools that make daily routines a little easier.
           </p>
         </section>
 
@@ -254,12 +258,12 @@
               <div class="flex items-baseline justify-between">
                 <h3 class="row-title text-lg font-bold text-black transition-colors uppercase tracking-wide flex items-center gap-2">
                   <span>Pierce Lab</span>
-                  <span class="text-xs font-mono-meta text-[#587563] font-normal">&bull; Undergraduate Research Intern</span>
+                  <span class="text-xs font-mono-meta text-[#1F7A63] font-normal">&bull; Undergraduate Research Intern</span>
                 </h3>
-                <span class="text-xs font-mono-meta text-[#587563] font-semibold">PRESENT</span>
+                <span class="text-xs font-mono-meta text-[#1F7A63] font-semibold">PRESENT</span>
               </div>
               <p class="text-sm text-black leading-relaxed pt-1.5">
-                Building automated data intake pipelines and computational models to analyze complex biological and molecular structures.
+                Refactoring structural biology pipelines from Perl into modular Python, automating how we filter and align antibody-peptide datasets from PDB and SAbDab.
               </p>
             </div>
 
@@ -273,7 +277,7 @@
                 <span class="text-xs font-mono-meta text-[var(--c-slate)] font-semibold">MAY 2026 – AUG 2026</span>
               </div>
               <p class="text-sm text-black leading-relaxed pt-1.5">
-                Engineered streaming pipelines and notification services, seamlessly migrating 16k+ users onto the new notifications platform for Analytics with zero downtime.
+                Migrated Atlassian Analytics' notifications onto the shared company platform, transitioning 16k+ monthly active users and laying the groundwork for the launch of the new <a href="https://www.atlassian.com/platform/platform-apps/insights" target="_blank" rel="noreferrer" class="text-[#1F7A63] font-medium underline underline-offset-4 hover:text-[#165a49] transition-colors">Insights</a> app!
               </p>
             </div>
 
@@ -287,7 +291,7 @@
                 <span class="text-xs font-mono-meta text-[var(--c-slate)] font-semibold">MAY 2025 – AUG 2025</span>
               </div>
               <p class="text-sm text-black leading-relaxed pt-1.5">
-                Built interactive data visualization dashboards for corporate ESG compliance, leading a frontend rewrite to Svelte that improved page load speeds by 300ms.
+                Built the initial client dashboard for tracking sustainability data, then rewrote the frontend from React to Svelte to cut down bundle weight and load times.
               </p>
             </div>
 
@@ -309,10 +313,10 @@
             <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6">
               <div class="space-y-3 flex-1 text-sm sm:text-base leading-relaxed text-black pt-0.5">
                 <p>
-                  I’m double-majoring in Computer Science and Biological Sciences at the University of Maryland. I like working with messy data, building clean web tools, and figuring out how things work under the hood.
+                  Thanks for stopping by. I keep this page updated with things I'm working on, my projects, photography, and whatever else I’m currently up to.
                 </p>
                 <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
-                  Most of my time is split between lab research, full-stack side projects, and studying outside on McKeldin Mall. I like solving real problems with code, whether that’s wrangling biological datasets or building software that people actually find useful.
+                  Take a look around, and don't hesitate to reach out if you ever want to chat.
                 </p>
               </div>
 
@@ -324,7 +328,7 @@
 
             <!-- What I'm currently into -->
             <div class="pt-2 border-t border-[var(--card-border)]/60">
-              <span class="text-xs font-mono-meta text-[#587563] font-bold uppercase tracking-wider block">
+              <span class="text-xs font-mono-meta text-[#1F7A63] font-bold uppercase tracking-wider block">
                 What I’m into currently:
               </span>
             </div>
@@ -333,7 +337,7 @@
               
               <!-- Bouldering -->
               <div class="text-row group cursor-default flex items-start gap-4">
-                <div class="w-10 h-10 rounded-xl bg-white border border-[var(--card-border)] flex items-center justify-center text-[var(--c-sage)] flex-shrink-0 mt-0.5 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-white border border-[var(--card-border)] flex items-center justify-center text-[var(--c-boulder)] flex-shrink-0 mt-0.5 shadow-xs">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M3 20h18L14 7l-4 6-3-4-4 11z"></path></svg>
                 </div>
                 <div class="space-y-1">
@@ -341,7 +345,7 @@
                     BOULDERING
                   </span>
                   <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-                    Currently recovering from a TFCC injury :(.
+                    Currently on a break because I am injured D:
                   </p>
                 </div>
               </div>
@@ -356,7 +360,7 @@
                     MUSIC
                   </span>
                   <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-                    Currently listening to a lot of <strong class="text-black">Chuu</strong>, especially her album <strong class="text-black">XO, My Cyberlove</strong>.
+                    Currently listening to a lot of Chinese and Korean hyperpop!
                   </p>
                 </div>
               </div>
@@ -371,7 +375,7 @@
                     ANIME
                   </span>
                   <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-                    Very into <strong class="text-black">The Apothecary Diaries</strong> right now (I love maomao &lt;3).
+                    Recently finished <strong class="text-black">Kuroko no basket</strong> T_T, might be my favorite sports anime.
                   </p>
                 </div>
               </div>
@@ -398,7 +402,7 @@
                 <span class="font-bold text-black block uppercase tracking-wide text-xs font-mono-meta">
                   PHOTOGRAPHY // ALBUM COVER RECREATIONS
                 </span>
-                <span class="text-[11px] font-mono-meta text-[#587563] font-medium">
+                <span class="text-[11px] font-mono-meta text-[#1F7A63] font-medium">
                   Shot on Nikon &bull; Adobe Lightroom &amp; Photoshop
                 </span>
               </div>
@@ -458,7 +462,7 @@
 
                 <!-- 4. Clairo - Charm -->
                 <div class="group cursor-pointer space-y-2 text-center" onclick="openPhotoModal('images/clairo_charm.jpg', 'Charm', 'Clairo (Emily)', 'Shot on Nikon. Graded in Lightroom and Edited in Photoshop.')">
-                  <div class="aspect-square rounded-2xl overflow-hidden border border-[var(--card-border)] bg-stone-100 shadow-xs relative ring-2 ring-[#587563]/25">
+                  <div class="aspect-square rounded-2xl overflow-hidden border border-[var(--card-border)] bg-stone-100 shadow-xs relative ring-2 ring-[#1F7A63]/30">
                     <img src="images/clairo_charm.jpg" alt="Clairo - Charm Recreation (Emily Chen)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span class="p-1.5 rounded-full bg-white/90 text-black shadow-xs">
@@ -469,7 +473,7 @@
                   </div>
                   <div>
                     <span class="text-xs font-bold text-black block tracking-tight">CHARM</span>
-                    <span class="text-[10px] font-mono-meta text-[#587563] font-semibold">Clairo (Emily)</span>
+                    <span class="text-[10px] font-mono-meta text-[#1F7A63] font-semibold">Clairo (Emily)</span>
                   </div>
                 </div>
 
@@ -500,7 +504,7 @@
                 <span class="text-xs font-mono-meta text-[var(--c-slate)] font-semibold">2026</span>
               </div>
               <p class="text-sm text-black leading-relaxed pt-1.5">
-                An interactive infinite canvas mapping team resources, Jira boards, and repos into a unified role-aware onboarding workspace.
+                An interactive canvas that aggregates team Confluence spaces, Jira boards, and repos by recency. Built in 9 hours during an internal ShipIt hackathon to cut down onboarding ramp-up.
               </p>
             </div>
 
@@ -514,7 +518,7 @@
                 <span class="text-xs font-mono-meta text-[var(--c-slate)] font-semibold">2025</span>
               </div>
               <p class="text-sm text-black leading-relaxed pt-1.5">
-                Interactive campus map allowing students to log and discover the best secluded spots to cry.
+                A campus map built during a hackathon that lets students drop pins and share quiet, secluded spots to decompress around campus.
               </p>
             </div>
 
@@ -528,7 +532,7 @@
                 <span class="text-xs font-mono-meta text-[var(--c-slate)] font-semibold">2025</span>
               </div>
               <p class="text-sm text-black leading-relaxed pt-1.5">
-                Cross-platform React Native app helping students navigate connected indoor walkways and bridges during winter weather.
+                An indoor routing app using campus floorplans to help UMD students navigate connected hallways and skywalks when it's freezing or pouring rain outside.
               </p>
             </div>
 
@@ -542,21 +546,7 @@
                 <span class="text-xs font-mono-meta text-[var(--c-slate)] font-semibold">2025</span>
               </div>
               <p class="text-sm text-black leading-relaxed pt-1.5">
-                Machine learning pipeline analyzing 10k+ shelter records to identify key intake factors behind returned adoptions.
-              </p>
-            </div>
-
-            <!-- 5. EasiPeasi Expense Snap (2024) -->
-            <div class="text-row group cursor-default">
-              <div class="flex items-baseline justify-between">
-                <h3 class="row-title text-lg font-bold text-black transition-colors uppercase tracking-wide flex items-center gap-2">
-                  <span>EasiPeasi Expense Snap</span>
-                  <span class="text-xs font-mono-meta text-[var(--c-expense)] font-normal">&bull; Finance Tool</span>
-                </h3>
-                <span class="text-xs font-mono-meta text-[var(--c-slate)] font-semibold">2024</span>
-              </div>
-              <p class="text-sm text-black leading-relaxed pt-1.5">
-                Lightweight personal finance tracker for quick daily expense logging and real-time monthly budget monitoring.
+                Trained classification models on 10,000+ animal shelter records to identify key intake factors behind returned adoptions.
               </p>
             </div>
 
@@ -716,10 +706,10 @@
               </div>
 
               <div class="flex items-center justify-between pt-1">
-                <span id="form-feedback" class="text-xs font-mono-meta text-[#587563] font-semibold hidden">
+                <span id="form-feedback" class="text-xs font-mono-meta text-[#1F7A63] font-semibold hidden">
                   &check; Thank you! Message sent.
                 </span>
-                <button type="submit" id="submit-btn" class="ml-auto px-6 py-3 rounded-xl bg-[#587563] hover:bg-[#486151] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs flex items-center gap-2">
+                <button type="submit" id="submit-btn" class="ml-auto px-6 py-3 rounded-xl bg-[#1F7A63] hover:bg-[#165a49] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xs flex items-center gap-2">
                   <span>SEND MESSAGE</span>
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
@@ -731,9 +721,9 @@
           <div class="pt-8 border-t border-[var(--card-border)] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono-meta text-[var(--text-muted)]">
             <div>Emily Chen &copy; 2026</div>
             <div class="flex items-center gap-5">
-              <a href="mailto:echen583@gmail.com" class="hover:text-[#587563] transition-colors underline underline-offset-4">Email</a>
-              <a href="https://github.com/emilycchen" target="_blank" class="hover:text-[#587563] transition-colors underline underline-offset-4">GitHub</a>
-              <a href="https://linkedin.com/in/emcchens/" target="_blank" class="hover:text-[#587563] transition-colors underline underline-offset-4">LinkedIn</a>
+              <a href="mailto:echen583@gmail.com" class="hover:text-[#1F7A63] transition-colors underline underline-offset-4">Email</a>
+              <a href="https://github.com/emilycchen" target="_blank" class="hover:text-[#1F7A63] transition-colors underline underline-offset-4">GitHub</a>
+              <a href="https://linkedin.com/in/emcchens/" target="_blank" class="hover:text-[#1F7A63] transition-colors underline underline-offset-4">LinkedIn</a>
             </div>
           </div>
         </section>
@@ -771,7 +761,7 @@
         const active = link.dataset.target === id;
         link.classList.toggle('text-black', active);
         link.classList.toggle('font-bold', active);
-        link.classList.toggle('text-[#587563]', !active);
+        link.classList.toggle('text-[#1F7A63]', !active);
         link.classList.toggle('font-medium', !active);
       });
     }
@@ -923,7 +913,7 @@
       <div class="space-y-1.5 pt-1">
         <div class="flex items-baseline justify-between gap-2">
           <h4 id="modal-title" class="text-base sm:text-lg font-bold text-black uppercase tracking-tight"></h4>
-          <span id="modal-artist" class="text-xs font-mono-meta text-[#587563] font-semibold"></span>
+          <span id="modal-artist" class="text-xs font-mono-meta text-[#1F7A63] font-semibold"></span>
         </div>
         <p id="modal-desc" class="text-xs text-[var(--text-muted)] leading-relaxed font-mono-meta"></p>
       </div>
